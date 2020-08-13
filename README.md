@@ -14,13 +14,17 @@ All datasets must contain these features :
   - valid : a logical feature which specify the observations to include ("1") or to exclude ("0")
 ________________________________________________________________________________________________________________________________________________________
 
-library("easyRF") : load the library 
+1/ First, load the library 
+library("easyRF")
 
-rf_initialize() : let you select your dataset (csv/xls format) and generates 2 configuration files (rf_metadata.csv, rf_grid_parameters.csv)
-
+2/ Select your dataset (csv/xls format) and generates the 2 configuration files : rf_metadata.csv, rf_grid_parameters.csv
+rf_initialize()
 Now, you just have to complete both configuration files (/"project folder"/easyRF/attachments/).
 
-run_analysis() : 
+3/ Perform the random forest analysis
+run_analysis() 
+
+This step will :
   - Import parameters : recall parameters saved in configuration files.
   - Prepare dataset : clean dataset, convert binary features into compatible format (levels : "1","2"), One-Hot-Encoding categorical features, impute data.
   - random forest analysis : perform multiple cross-validated rf analysis and autotuning of the model 
